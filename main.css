@@ -8,7 +8,7 @@ body {
     background-image: url(photos/page.avif);
     background-size: cover;
     overflow: hidden;
-    height: 100vh;
+    
 
 }
 
@@ -68,7 +68,6 @@ button:active {
     color: white;
 
 }
-
 .man {
     width: 200px;
     position: absolute;
@@ -81,11 +80,17 @@ button:active {
     border-radius: 50%;
     rotate: y 62deg;
     position: absolute;
-    left: 75%;
+    left: 75%; 
 }
 
 @media (max-width: 650px) {
     body {
         margin-top: 30vh;
+    }
+    .man {
+        width: 100px;
+    }
+    .home {
+        width: 100px;
     }
 }
