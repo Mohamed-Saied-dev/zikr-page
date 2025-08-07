@@ -69,11 +69,13 @@ button:active {
 
 }
 .man {
-    width: 200px;
+    width: 300px;
     position: absolute;
     left: 0%;
     z-index: 5;
-    margin-top: 30px;
+    rotate: y 180deg;
+    transform: translate(54px, -20px);
+
 }
 
 .home {
@@ -88,7 +90,7 @@ button:active {
         margin-top: 30vh;
     }
     .man {
-        width: 100px;
+        width: 200px;
     }
     .home {
         width: 100px;
