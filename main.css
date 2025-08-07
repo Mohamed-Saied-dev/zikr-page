@@ -3,12 +3,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     background-image: url(photos/page.avif);
     background-size: cover;
     overflow: hidden;
+    height: 100vh;
 
 }
+
 .container {
     display: flex;
     justify-content: center;
@@ -16,8 +19,9 @@ body {
     gap: 100px;
     margin: 30px 0;
 }
+
 .text {
-    margin:0 auto;
+    margin: 0 auto;
     width: fit-content;
     max-width: 80vw;
     padding: 10px;
@@ -31,9 +35,10 @@ body {
     border-radius: 10px;
     border: white solid 3px;
 
-    
+
 
 }
+
 button {
     padding: 20px 10px;
     border-radius: 10px;
@@ -43,10 +48,12 @@ button {
     font-size: 20px;
     transition: .1s;
 }
+
 button:active {
     scale: .98;
     background-image: linear-gradient(rgb(232, 151, 2), rgb(239, 239, 0));
 }
+
 .counter {
     background-image: radial-gradient(circle, rgb(255, 0, 247), rgba(255, 192, 203, 0.643));
     display: flex;
@@ -59,8 +66,9 @@ button:active {
     font-weight: 900;
     font-size: 30px;
     color: white;
-    
+
 }
+
 .man {
     width: 200px;
     position: absolute;
@@ -68,6 +76,7 @@ button:active {
     z-index: 5;
     margin-top: 30px;
 }
+
 .home {
     border-radius: 50%;
     rotate: y 62deg;
@@ -75,23 +84,8 @@ button:active {
     left: 75%;
 }
 
-@media (max-width: 700px) {
-    /* .container {
-        gap: 20px;
-     
+@media (max-width: 650px) {
+    body {
+        margin-top: 30vh;
     }
-    button {
-        
-    }
-    .counter {
-        width: 50px;
-        height: 50px;
-        font-size: 16px;
-    }
-    .total {
-        font-size: 16px;
-        height: 50px;
-        padding: 0 10px;
-    } */
 }
-
