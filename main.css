@@ -129,10 +129,9 @@ button:active {
 
 
 @media (max-width: 650px) {
-    body {}
 
     .content {
-        margin-top: 30vh;
+        margin-top: 18vh;
     }
 
     .man {
