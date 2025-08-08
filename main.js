@@ -1,4 +1,25 @@
-let button = document.querySelector("button");
+// Install App
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  document.getElementById("installBtn").style.display = "block";
+
+  document.getElementById("installBtn").addEventListener('click', () => {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('تم التثبيت');
+      }
+      deferredPrompt = null;
+    });
+  });
+});
+// End
+
+let button = document.querySelector(".click");
 let counter = document.querySelector(".counter");
 let text = document.querySelector(".text");
 let man = document.querySelector(".man");
@@ -34,19 +55,20 @@ function updateLevel(counter) {
             counterStart(1,"لا اله الا الله وحدة لاشريك له له الملك وله الحمد وهو علي كل شئ قدير" )
             break;
         case 4:
-            counterStart(3, "سورة الاخلاص -  سورة الفلق - سورة الناس")
+            counterStart(100, "سبحان الله وبحمده")
             break;
         case 5: 
             counterStart(1, "اية الكرسي")
             break;
         case 6:
             document.body.innerHTML = `
+            <div class="content">
             <div class=text> تقبل الله منك صالح الاعمال </div>
             <button onclick="reload()" style="display: block;margin: auto">مرة اخري</button>
             <img src="photos/quran.jpg" alt="quran" style="width: 500px;max-width: 90%;margin: 10px auto;display: block">
             <audio class="audio2" src="auido/quran2.mp3" autoplay type="audio/mpeg" style="visibility: hidden">
             </audio>
-            
+            </div>
             `
         
 
@@ -66,14 +88,14 @@ function manMove() {
         case 0:
         case 1:
         case 2:
-            manSteps += .46;
-            man.style.cssText = `left: ${manSteps}%`;
-            break;
         case 3:
         case 4:
+            manSteps += .35;
+            man.style.cssText = `left: ${manSteps}%`;
+            break;
         case 5:
             
-            manSteps += 5.892;
+            manSteps += 5;
             man.style.cssText = `left: ${manSteps}%`;       
     }
 }
