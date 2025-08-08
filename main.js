@@ -17,17 +17,21 @@ window.addEventListener('beforeinstallprompt', (e) => {
     });
   });
 });
-// End
+//========================================================
 
-let button = document.querySelector(".click");
-let counter = document.querySelector(".counter");
-let text = document.querySelector(".text");
-let man = document.querySelector(".man");
+const button = document.querySelector(".click");
+const counter = document.querySelector(".counter");
+const text = document.querySelector(".text");
+const  man = document.querySelector(".man");
+const checkbox = document.getElementById("muted");
 let count = 33,manSteps = 0,level = 0, sound = true;
 
+
 display(count)
+
+
 button.addEventListener("click", () => {
-    if (sound){
+    if (sound && !checkbox.checked){
         document.querySelector('.audio1').play();
         sound = false;
     }
@@ -58,15 +62,16 @@ function updateLevel(counter) {
             counterStart(100, "سبحان الله وبحمده")
             break;
         case 5: 
-            counterStart(1, "اية الكرسي")
+            counterStart(1, "لا اله الا انت سبحانك اني كنت من الظالمين")
             break;
         case 6:
+            let isMute = checkbox.checked ? "" : "autoplay";
             document.body.innerHTML = `
             <div class="content">
             <div class=text> تقبل الله منك صالح الاعمال </div>
             <button onclick="reload()" style="display: block;margin: auto">مرة اخري</button>
             <img src="photos/quran.jpg" alt="quran" style="width: 500px;max-width: 90%;margin: 10px auto;display: block">
-            <audio class="audio2" src="auido/quran2.mp3" autoplay type="audio/mpeg" style="visibility: hidden">
+            <audio class="audio2" src="auido/quran2.mp3" ${isMute} type="audio/mpeg" style="visibility: hidden">
             </audio>
             </div>
             `
