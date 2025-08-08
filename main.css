@@ -8,18 +8,17 @@ body {
     background-image: url(photos/page.png);
     background-size: cover;
     overflow: hidden;
-    background-position: center ;
+    background-position: center;
 
 }
 
 .content {
     margin-top: 20vh;
 }
+
 .muted {
-    position: absolute;
-    top: 120px;
-    left: 50%;
-    transform: translateX(-50%);
+    width: fit-content;
+    margin: auto;
     background-image: linear-gradient(rgb(255, 183, 0), rgb(255, 106, 0));
     padding: 5px;
     border-radius: 5px;
@@ -70,10 +69,7 @@ button:active {
 #installBtn {
     background-image: linear-gradient(rgb(144, 0, 255), rgb(0, 166, 255));
     color: white;
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin: 30px auto;
     font-size: 16px;
     padding: 10px 5px;
 
@@ -111,10 +107,30 @@ button:active {
     left: 75%;
 }
 
+.road {
+    position: absolute;
+    height: 5px;
+    width: 61vw;
+    background-color: rgb(34, 33, 33);
+    left: 15%;
+    transform: translateY(120px);
+}
+
+.road:before {
+    content: '';
+    border-color: transparent transparent transparent rgb(71, 70, 72);
+    border-style: solid;
+    border-width: 20px;
+    border-radius: 10px;
+    position: absolute;
+    left: 100%;
+    transform: translateY(-50%);
+}
+
+
 @media (max-width: 650px) {
-    body {
-        
-    }
+    body {}
+
     .content {
         margin-top: 30vh;
     }
@@ -126,4 +142,11 @@ button:active {
     .home {
         width: 100px;
     }
+
+    .road {
+        width: 55vw;
+        left: 18%;
+        transform: translateY(72px);
+    }
+
 }
