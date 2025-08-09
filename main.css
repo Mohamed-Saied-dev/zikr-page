@@ -43,15 +43,21 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    background-image: linear-gradient(black, black);
+    color: rgb(188, 255, 202);
+    background-image: linear-gradient(black, rgb(129, 129, 129));
     font-weight: 900;
     font-size: 25px;
     border-radius: 10px;
     border: white solid 3px;
-
-
-
+    animation: animation1 .3s;
+}
+@keyframes animation1 {
+    from {
+        transform: translateX(500px);
+    }
+    to {
+        transform: translateX(0);
+    }
 }
 
 button {

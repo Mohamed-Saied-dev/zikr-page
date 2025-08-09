@@ -28,8 +28,10 @@ let count = 33,manSteps = 0,level = 0, sound = true;
 
 
 display(count)
-
-
+checkbox.onchange = function() {
+    document.querySelector("audio").pause();
+    sound = true;
+}
 button.addEventListener("click", () => {
     if (sound && !checkbox.checked){
         document.querySelector('.audio1').play();
